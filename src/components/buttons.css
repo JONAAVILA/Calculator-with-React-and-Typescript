@@ -1,0 +1,30 @@
+.conteiner_buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.conteiner_buttons button{
+    margin: 2px;
+}
+
+.visor{
+    padding: 1rem;
+    display: flex;
+    justify-content: right;
+    font-size: 2rem;
+}
+
+.box_calculator{
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-radius: 5px;
+}
+
+.igual{
+    grid-column:span 2;
+}
+
+.igual:hover{
+    background-color:rgb(63, 44, 235)
+}
