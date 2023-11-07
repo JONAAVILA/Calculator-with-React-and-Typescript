@@ -1,4 +1,4 @@
-import Buttons from './components/Buttons.tsx';
+import Buttons from './components/buttons/Buttons.tsx';
 import './App.css'
 
 

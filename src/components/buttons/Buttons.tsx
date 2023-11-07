@@ -1,19 +1,27 @@
 import './buttons.css';
+import { useState } from 'react';
 
 const Buttons = ()=>{
+
+    const [ result, setResult ] = useState<string | number>();
+
+    const handleState = (value : (String | number))=>{
+        setResult(value)
+    }
+
     return(
     <div className='box_calculator'>
 
-      <div className='visor' >0</div>
+      <div className='visor' >{result}</div>
         <div className='conteiner_buttons'>
           <button>%</button>
           <button>C</button>
           <button>Del</button>
           <button>/</button>
-          <button>9</button>
-          <button>8</button>
-          <button>7</button>
-          <button>x</button>
+          <button onClick={()=> handleState(9)} >9</button>
+          <button onClick={()=> handleState(8)} >8</button>
+          <button onClick={()=> handleState(7)} >7</button>
+          <button onClick={()=> handleState("x")} >x</button>
           <button>6</button>
           <button>5</button>
           <button>4</button>
