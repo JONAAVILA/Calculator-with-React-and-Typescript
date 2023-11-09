@@ -3,10 +3,17 @@ import { useState } from 'react';
 
 const Buttons = ()=>{
 
-    const [ result, setResult ] = useState<string | number>();
+    const [ result, setResult ] = useState<Number[]>([]);
+    const [ currentOperator, setCurrentOperator] = useState<String>("")
 
-    const handleState = (value : (String | number))=>{
-        setResult(value)
+    const handleState = (value : Number)=>{
+        if(currentOperator === "+"){
+            
+        }
+    }
+
+    const handleOperator = (value : String)=>{
+        setCurrentOperator(value)
     }
 
     return(
@@ -18,10 +25,10 @@ const Buttons = ()=>{
           <button>C</button>
           <button>Del</button>
           <button>/</button>
-          <button onClick={()=> handleState(9)} >9</button>
-          <button onClick={()=> handleState(8)} >8</button>
-          <button onClick={()=> handleState(7)} >7</button>
-          <button onClick={()=> handleState("x")} >x</button>
+          <button >9</button>
+          <button >8</button>
+          <button >7</button>
+          <button >x</button>
           <button>6</button>
           <button>5</button>
           <button>4</button>
