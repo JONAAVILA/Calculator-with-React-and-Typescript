@@ -25,6 +25,12 @@ const Buttons = ()=>{
         setVizor(state)
     }
 
+    const handlePoint = (value : string)=>{
+       if( !vizor.includes(value)){
+            setVizor(vizor + value)
+       }
+    }
+
 
     return(
     <div className='box_calculator'>
@@ -48,7 +54,7 @@ const Buttons = ()=>{
           <button onClick={()=> handleVizor("1")} >1</button>
           <button onClick={()=> handleVizor("-")} >-</button>
           <button onClick={()=> handleVizor("0")} >0</button>
-          <button onClick={()=> handleVizor(".")} >.</button>
+          <button onClick={()=> handlePoint(".")} >.</button>
           <button className='igual' onClick={()=> handleVizor("=")} > = </button>
         </div>
     </div>
