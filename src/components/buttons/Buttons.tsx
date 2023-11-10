@@ -18,7 +18,11 @@ const Buttons = ()=>{
     }
 
     const handleDelete = ()=>{
-       
+        let state = vizor.slice(0,-1)
+        if(state === ""){
+           return setVizor("0") 
+        }
+        setVizor(state)
     }
 
 
