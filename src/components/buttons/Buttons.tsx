@@ -3,43 +3,49 @@ import { useState } from 'react';
 
 const Buttons = ()=>{
 
-    const [ result, setResult ] = useState<Number[]>([]);
-    const [ currentOperator, setCurrentOperator] = useState<String>("")
+    const [ vizor, setVizor ] = useState<String>("0");
 
-    const handleState = (value : Number)=>{
-        if(currentOperator === "+"){
-            
+
+    const handleVizor = (value : string)=>{
+        if(vizor === "0"){
+            return setVizor(value)
         }
+        setVizor(vizor + value)
     }
 
-    const handleOperator = (value : String)=>{
-        setCurrentOperator(value)
+    const handleReset = ()=>{
+        setVizor("0")
     }
+
+    const handleDelete = ()=>{
+       
+    }
+
 
     return(
     <div className='box_calculator'>
 
-      <div className='visor' >{result}</div>
+      <div className='visor'>{vizor}</div>
         <div className='conteiner_buttons'>
           <button>%</button>
-          <button>C</button>
-          <button>Del</button>
-          <button>/</button>
-          <button >9</button>
-          <button >8</button>
-          <button >7</button>
-          <button >x</button>
-          <button>6</button>
-          <button>5</button>
-          <button>4</button>
-          <button>+</button>
-          <button>3</button>
-          <button>2</button>
-          <button>1</button>
-          <button>-</button>
-          <button>0</button>
-          <button>.</button>
-          <button className='igual'> = </button>
+          <button onClick={handleReset}>C</button>
+          <button onClick={handleDelete} >Del</button>
+          <button onClick={()=> handleVizor("/")} >/</button>
+          <button onClick={()=> handleVizor("9")} >9</button>
+          <button onClick={()=> handleVizor("8")} >8</button>
+          <button onClick={()=> handleVizor("7")} >7</button>
+          <button onClick={()=> handleVizor("x")} >x</button>
+          <button onClick={()=> handleVizor("6")} >6</button>
+          <button onClick={()=> handleVizor("5")} >5</button>
+          <button onClick={()=> handleVizor("4")} >4</button>
+          <button onClick={()=> handleVizor("+")} >+</button>
+          <button onClick={()=> handleVizor("3")} >3</button>
+          <button onClick={()=> handleVizor("2")} >2</button>
+          <button onClick={()=> handleVizor("1")} >1</button>
+          <button onClick={()=> handleVizor("-")} >-</button>
+          <button onClick={()=> handleVizor("0")} >0</button>
+          <button onClick={()=> handleVizor(".")} >.</button>
+          <button className='igual' onClick={()=> handleVizor("=")} > = </button>
         </div>
     </div>
     
